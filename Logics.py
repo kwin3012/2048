@@ -27,8 +27,6 @@ def get_current_state(mat):
             if mat[r][c] == 0:
                 return "game not over"
 
-               
-    
     for r in range(4):
         for c in range(4):
             if r+1<4:
@@ -67,6 +65,7 @@ def merge(mat):
 
 
 def reverse(mat):
+    print(mat)
     for r in range(4):
         for c in range(2):
             temp = mat[r][c]
@@ -85,7 +84,7 @@ def transpose(mat):
 def move_left(mat):
     mat,c1 = compress(mat)
     mat,c2  = merge(mat)
-    mat = compress(mat)
+    mat,c = compress(mat)
     return mat,c1 or c2
 
 def move_right(mat):
@@ -101,6 +100,7 @@ def move_up(mat):
     return mat,c
 
 def move_down(mat):
+    print(mat)
     mat = transpose(mat)
     mat,c = move_right(mat)
     mat = transpose(mat)
