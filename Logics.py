@@ -65,7 +65,6 @@ def merge(mat):
 
 
 def reverse(mat):
-    print(mat)
     for r in range(4):
         for c in range(2):
             temp = mat[r][c]
@@ -100,7 +99,6 @@ def move_up(mat):
     return mat,c
 
 def move_down(mat):
-    print(mat)
     mat = transpose(mat)
     mat,c = move_right(mat)
     mat = transpose(mat)
